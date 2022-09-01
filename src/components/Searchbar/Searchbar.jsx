@@ -1,21 +1,22 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 import { SearchButton } from './Searchbar.styled';
-
 const SearchForm = styled(Form)`
-  margin-bottom: 10px;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.61);
-  padding: 30px 0px;
+  background: ${p => p.theme.colors.primary};
+  padding: ${p => p.theme.space[5]} 0px;
+  gap: ${p => p.theme.space[4]};
+  display: flex;
   text-align: center;
-  background: #a80385;
+  justify-content: center;
 `;
 const SearchInput = styled(Field)`
   padding: ${p => p.theme.space[0]};
-
-  width: 300px;
-  height: 40px;
-  border: none;
-  border-radius: 3px;
+  width: ${p => p.theme.sizes[6]};
+  height: ${p => p.theme.sizes[2]};
+  border: ${p => p.theme.borders.none};
+  border-radius: ${p => p.theme.radii.sm};
   text-align: center;
   line-height: 1;
 `;
@@ -39,4 +40,8 @@ export const Searchbar = ({ onSubmit }) => {
       </Formik>
     </header>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

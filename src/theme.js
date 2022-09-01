@@ -76,6 +76,6 @@ export const theme = {
   },
   shadows: {
     none: 'none',
-    all: '0px 0px 8px -1px rgba(0, 0, 0, 0.3);',
+    all: '0px 0px 8px -1px rgba(0, 0, 0, 0.5);',
   },
 };
